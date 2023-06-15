@@ -1,11 +1,16 @@
 package org.livraria;
 
 public class Livro {
-    String nome;
-    String descricao;
+    private String nome;
+    private String descricao;
     private double valor;
-    String isbn;
-    Autor autor;
+    private String isbn;
+    private Autor autor;
+    private boolean impresso;
+
+    public Livro() {
+
+    }
 
     void mostrarDetalhes() {
         String mensagem = "Mostrando detalhes do livro";
@@ -19,8 +24,11 @@ public class Livro {
     }
 
     public boolean aplicaDescontoDe(double porcentagem) {
-        // Descontos maiores que 30% não são válidos
+        // Descontos maiores que 30% não são válidos para livros impressos
         if (porcentagem > 0.3) return false;
+
+        // Descontos maiores que 15% não são válidos para ebooks
+        else if (!this.impresso && porcentagem > 0.15) return false;
 
         this.valor -= this.valor * porcentagem;
         return true;
@@ -30,7 +38,20 @@ public class Livro {
         return this.autor != null;
     }
 
-    void adicionaValor() { this.valor =  valor; }
+    public  String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    public String getDescricao() { return descricao; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
+    public double getValor() { return valor; }
+    public void setValor(double valor) { this.valor = valor; }
+    public String getIsbn() { return isbn; }
+    public void setIsbn(String isbn) { this.isbn = isbn; }
+    public Autor getAutor() { return autor; }
+    public void setAutor(Autor autor) { this.autor = autor; }
 
-    double retornaValor() { return this.valor; }
+    public Livro(Autor autor) {
+        this.autor = autor;
+        this.isbn = "000-00-00000-00-0";
+        this.impresso = true;
+    }
 }
