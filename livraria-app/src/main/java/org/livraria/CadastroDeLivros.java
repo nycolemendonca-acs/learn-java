@@ -7,14 +7,14 @@ public class CadastroDeLivros {
         livro001.setDescricao("Novos recursos da linguagem");
         livro001.setValor(59.90);
         livro001.setIsbn("978-85-66250-46-6");
-        livro001.mostrarDetalhes();
+        livro001.mostrarDetalhesDoLivro();
 
         Livro livro002 = new Livro();
-        livro002.setNome("Lógica de Programação");
-        livro002.setDescricao("Crie seus primeiros programas.");
-        livro002.setValor(59.90);
-        livro002.setIsbn("978-85-66250-22-0");
-        livro002.mostrarDetalhes();
+        livro001.setNome("Lógica de Programação");
+        livro001.setDescricao("Crie seus primeiros programas");
+        livro001.setValor(59.90);
+        livro001.setIsbn("978-85-66250-22-0");
+        livro002.mostrarDetalhesDoLivro();
 
         Autor autor001 = new Autor();
         autor001.setNome("Rodrigo Turini");

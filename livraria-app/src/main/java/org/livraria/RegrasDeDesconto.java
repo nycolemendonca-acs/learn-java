@@ -9,7 +9,7 @@ public class RegrasDeDesconto {
         livro.setValor(59.90);
 
         if (!livro.aplicaDescontoDe(0.3)) {
-            System.out.println("Desconto não pode ser maior do que 30%");
+            System.out.println("Desconto não pode ser maior que 30%.");
         } else {
             System.out.println("Valor do livro com desconto: " + livro.getValor());
         }
@@ -18,9 +18,9 @@ public class RegrasDeDesconto {
         ebook.setValor(29.90);
 
         if (!ebook.aplicaDescontoDe(0.3)) {
-            System.out.println("Desconto no ebook não pode ser maior do que 15%");
+            System.out.println("Desconto não pode ser maior que 15%.");
         } else {
-            System.out.println("Valor do ebook com desconto: " + ebook.getValor());
+            System.out.println("Valor do livro com desconto: " + ebook.getValor());
         }
     }
 }
